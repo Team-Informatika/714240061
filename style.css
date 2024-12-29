@@ -87,14 +87,14 @@ body {
 }
 
 .card-body .social-icon:hover {
-    background-color: #4CAF50;
+    background-color: #3e79f8;
     color: #fff;
 }
 
 .rate {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #4CAF50;
+    color: #e2dfe9;
 }
 
 /* Card footer styling */

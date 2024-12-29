@@ -32,7 +32,7 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
-    background-color: #4CAF50;
+    background-color: #0d0f16;
     color: #fff;
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .card-body a {
-    color: #4CAF50;
+    color: #0a0a0a;
     text-decoration: none;
 }
 

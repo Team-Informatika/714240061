@@ -11,5 +11,5 @@ function mywhatsapp() {
 }
 onClick("instagram",myinstagram);
 function myinstagram() {
-    window.open('https://instagram.com/kaizhr.45', 'blank');
+    window.open('https://instagram.com/kaizhar.45', 'blank');
 }

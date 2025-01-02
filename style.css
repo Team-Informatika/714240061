@@ -122,3 +122,18 @@ body {
         padding: 15px;
     }
 }
+
+.social-icon {
+    font-size: 20px; /* Ukuran font ikon */
+    margin: 10px; /* Jarak antar ikon */
+    color: #000; /* Warna ikon */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+}
+
+.social-icon i {
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+.social-icon:hover {
+    color: #007bff; /* Warna saat hover */
+}

@@ -18,7 +18,7 @@ body {
 /* Card container styling */
 .card {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -124,7 +124,7 @@ body {
 }
 
 .social-icon {
-    font-size: 20px; /* Ukuran font ikon */
+    font-size: 18px; /* Ukuran font ikon */
     margin: 10px; /* Jarak antar ikon */
     color: #000; /* Warna ikon */
     text-decoration: none; /* Menghilangkan garis bawah pada tautan */

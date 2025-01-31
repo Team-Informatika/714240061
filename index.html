@@ -3,37 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontak Saya</title>
+    <title>Kartu Nama Digital - Zidan Hairra Ramadhan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
         function toggleMenu() {
-            document.getElementById("menu").classList.toggle("active");
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("active");
         }
     </script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="menu-bar">
-        <h1>Kontak</h1>
+    <header class="header">
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <h1>Kartu Nama Digital</h1>
     </header>
+
     <nav id="menu" class="menu">
         <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="about.html">Tentang</a>
+        <a href="contact.html">Kontak</a>
     </nav>
+
     <main class="container">
-        <h1>Hubungi Saya</h1>
-        <p>Jangan ragu untuk menghubungi saya melalui kontak di bawah ini:</p>
-        <div class="contact-info">
+        <section class="profile">
+            <img src="profile.jpg" alt="Foto Profil Zidan" class="profile-img">
+            <h2>Zidan Hairra Ramadhan</h2>
+            <p>Mahasiswa D4 Teknik Informatika - ULBI</p>
+        </section>
+
+        <section class="contact-info">
+            <h2>Hubungi Saya</h2>
             <p>Email: <a href="mailto:zidanramadhan950@gmail.com">zidanramadhan950@gmail.com</a></p>
             <p>Telepon: <a href="tel:+6283114925705">+62 831-1492-5705</a></p>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/kaizhar.45" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/6283114925705?text=Halo%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://github.com/kaizhr" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
+        </section>
+
+        <section class="social-links">
+            <h2>Media Sosial</h2>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/kaizhar.45" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/6283114925705?text=Halo%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://github.com/kaizhr" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Zidan Hairra Ramadhan. Semua Hak Dilindungi.</p>
+    </footer>
 </body>
 </html>

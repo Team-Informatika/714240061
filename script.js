@@ -1,115 +1,83 @@
-import { getJSON } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.6/api.js";
-import { renderHTML } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.6/element.js";
-import { getHash, onHashChange } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.6/url.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.1/api.js";
+import { renderHTML } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.1/element.js";
+import { getHash, onHashChange } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.1/url.js"
 
-onHashChange(loadProfile);
-window.onload = loadProfile; // Memastikan profil dimuat saat pertama kali halaman dibuka
-
-function loadProfile() {
-    console.log("Current Hash:", getHash());
+onHashChange(ada);
+function ada() {
+    console.log(getHash());
     const hashpath = getHash();
-    if (hashpath === "profile") {
-        console.log("Menampilkan profil 😊");
-
-        // Tunggu sampai profile.html termuat, lalu panggil fetchProfileData
-        renderHTML("container", "profile.html", () => {
-            setTimeout(fetchProfileData, 500);
-        });
+    if (hashpath === "data") {
+        console.log("ini gan, sudah muncul datanya😊");
+        renderHTML("container", "profile.html", renderDataDariJson);
     }
 }
 
-function fetchProfileData() {
-    getJSON("https://t.if.co.id/json/kaizhr.json", displayProfile);
+function renderDataDariJson() {
+    getJSON("https://t.if.co.id/json/kaizhr.json", responseFunction);
 }
 
-function displayProfile(data) {
-    console.log("Data JSON diterima:", data);
+function responseFunction(isi) {
+    console.log(isi);
 
-    // Validasi struktur JSON
-    if (!data || !data.profile) {
-        console.error("Data profil tidak ditemukan atau format tidak sesuai!");
-        return;
-    }
+    const dataContainer = document.getElementById("profile");
+    dataContainer.innerHTML = ""; // Hapus isi lama sebelum menambahkan data baru
 
-    // Cari elemen container profil
-    const profileContainer = document.getElementById("profile");
-    if (!profileContainer) {
-        console.error("Elemen dengan id 'profile' tidak ditemukan di HTML.");
-        return;
-    }
-
-    profileContainer.innerHTML = ""; // Bersihkan konten lama
-
-    // Buat elemen gambar profil
     const avatar = document.createElement("img");
-    avatar.src = data.profile.photo || "default-profile.png"; // Gunakan foto default jika tidak ada
-    avatar.alt = "Foto Profil";
+    avatar.src = isi.data.Foto;
+    avatar.alt = "Avatar";
     avatar.id = "avatar";
 
-    // Buat elemen nama
     const name = document.createElement("h3");
-    name.id = "name";
-    name.textContent = data.profile.name || "Nama tidak tersedia";
+    name.id = "konten";
+    name.textContent = isi.data.Name;
 
-    // Buat elemen title/jabatan
-    const title = document.createElement("p");
-    title.id = "title";
-    title.textContent = data.profile.title || "Jabatan tidak tersedia";
+    const ug = document.createElement("p");
+    ug.id = "ug";
+    ug.textContent = isi.data.Ug;
 
-    // Buat container untuk informasi kontak
-    const contactContainer = document.createElement("div");
-    contactContainer.classList.add("contact-info");
-    contactContainer.id = "contact";
+    const skill = document.createElement("p");
+    skill.id = "skill";
+    skill.textContent = isi.data.Skill;
 
-    if (data.contact) {
-        const email = document.createElement("p");
-        email.innerHTML = `📧 Email: <a href="mailto:${data.contact.email}">${data.contact.email}</a>`;
+    const rate = document.createElement("p");
+    rate.id = "rate";
+    rate.textContent = isi.data.Rate;
 
-        const phone = document.createElement("p");
-        phone.innerHTML = `📞 Telepon: <a href="tel:${data.contact.phone}">${data.contact.phone}</a>`;
+    const socialContainer = document.createElement("div");
+    socialContainer.classList.add("social-icons");
+    socialContainer.id = "so";
 
-        contactContainer.appendChild(email);
-        contactContainer.appendChild(phone);
-    } else {
-        console.warn("Informasi kontak tidak tersedia.");
-    }
+    isi.data.socialIcons.icons.forEach((icon) => {
+        const linkElement = document.createElement("a");
+        linkElement.href = icon.url;
+        linkElement.target = "_blank";
+        linkElement.rel = "noopener noreferrer";
 
-    // Buat container untuk media sosial
-    const linksContainer = document.createElement("div");
-    linksContainer.classList.add("social-links");
-    linksContainer.id = "social";
+        const iconElement = document.createElement("i");
+        iconElement.id = icon.id;
+        iconElement.className = icon.class;
+        iconElement.title = icon.type;
 
-    if (Array.isArray(data.social_media)) {
-        data.social_media.forEach((social) => {
-            const link = document.createElement("a");
-            link.href = social.url;
-            link.target = "_blank";
-            link.rel = "noopener noreferrer";
+        linkElement.appendChild(iconElement);
+        socialContainer.appendChild(linkElement);
+    });
 
-            const icon = document.createElement("i");
-            icon.className = social.icon;
-            icon.title = social.platform;
+    
 
-            link.appendChild(icon);
-            linksContainer.appendChild(link);
-        });
-    } else {
-        console.warn("Data media sosial tidak tersedia.");
-    }
-
-    // Tambahkan elemen ke dalam profileContainer
-    profileContainer.appendChild(avatar);
-    profileContainer.appendChild(name);
-    profileContainer.appendChild(title);
-    profileContainer.appendChild(contactContainer);
-    profileContainer.appendChild(linksContainer);
+    // Tambahkan elemen ke dalam card-item
+    dataContainer.appendChild(avatar);
+    dataContainer.appendChild(name);
+    dataContainer.appendChild(ug);
+    dataContainer.appendChild(skill);
+    dataContainer.appendChild(rate);
+    dataContainer.appendChild(socialContainer);
 }
 
-// Animasi warna latar belakang
-const colors = ['#3f2f2f', '#854646', '#8f1c1c', '#670d0d', '#430101'];
-let currentColorIndex = 0;
+const colors = ['#2f2f3f', '#464685', '#1c1c8f', '#0d0d67', '#010143'];
+        let currentColorIndex = 0;
 
-setInterval(function() {
-    document.body.style.backgroundColor = colors[currentColorIndex];
-    currentColorIndex = (currentColorIndex + 1) % colors.length;
-}, 2000);
+        // Ubah warna latar belakang setiap 2 detik
+        setInterval(function() {
+            document.body.style.backgroundColor = colors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }, 2000);

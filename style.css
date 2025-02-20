@@ -18,7 +18,7 @@ body {
     position: relative;
     background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(218, 255, 6, 0.836);
+    box-shadow: 0 4px 6px rgba(0, 255, 213, 0.836);
     padding: 20px;
     width: 400px;
     text-align: center;
@@ -26,7 +26,7 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 10px 0 rgba(255, 18, 235, 0.836);
+    box-shadow: 0 10px 0 rgba(0, 225, 255, 0.836);
     transform: translateY(-5px);
 }
 
@@ -45,7 +45,7 @@ body {
 
 .card p#rate {
     font-size: 18px;
-    color: #57bffc;
+    color: #28a745;
     margin-top: 10px;
 }
 

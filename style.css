@@ -57,7 +57,7 @@ p {
 
 .contact-info a {
     text-decoration: none;
-    color: #f2f6fa;
+    color: #0c0c0c;
     font-weight: bold;
 }
 
@@ -71,7 +71,7 @@ p {
 
 .social-icons a {
     font-size: 24px;
-    color: white;
+    color: rgb(26, 25, 25);
     background: #f9fafc;
     padding: 10px;
     border-radius: 50%;

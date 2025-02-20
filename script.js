@@ -22,13 +22,13 @@ function displayProfile(data) {
 
     // Cek apakah data memiliki properti yang benar
     if (!data || !data.profile) {
-        console.error("Data profil tidak ditemukan!");
+        console.log("Data profil tidak ditemukan!");
         return;
     }
 
     const profileContainer = document.getElementById("profile");
     if (!profileContainer) {
-        console.error("Elemen dengan id 'profile' tidak ditemukan di HTML.");
+        console.log("Elemen dengan id 'profile' tidak ditemukan di HTML.");
         return;
     }
 

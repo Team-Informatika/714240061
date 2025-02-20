@@ -1,4 +1,4 @@
-/* Style untuk halaman kartu nama digital */
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -7,88 +7,96 @@
 }
 
 body {
-    background: linear-gradient(to right, #4e54c8, #8f94fb);
-    color: #fff;
+    background-color: #f4f4f4;
     text-align: center;
     padding: 20px;
 }
 
+/* Header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.menu {
-    display: none;
-    flex-direction: column;
-    margin-top: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-}
-
-.menu.active {
-    display: flex;
-}
-
-.menu a {
-    padding: 10px;
-    text-decoration: none;
+    background-color: #007bff;
     color: white;
-    transition: 0.3s;
-}
-
-.menu a:hover {
-    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    font-size: 1.5rem;
     border-radius: 10px;
 }
 
+/* Container */
 .container {
-    margin-top: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    background: white;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Profil */
 .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 3px solid white;
-    margin-bottom: 15px;
+    object-fit: cover;
+    margin: 10px 0;
+    border: 4px solid #007bff;
 }
 
+h2 {
+    margin: 10px 0;
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+/* Contact Info */
+.contact-info, .social-links {
+    margin-top: 20px;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Social Media */
 .social-icons {
-    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .social-icons a {
-    margin: 0 10px;
     font-size: 24px;
     color: white;
-    transition: 0.3s;
+    background: #007bff;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2);
-    color: #ffd700;
+    background: #0056b3;
 }
 
-.footer {
-    margin-top: 20px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+/* Responsif */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
 }

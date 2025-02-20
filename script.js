@@ -34,7 +34,7 @@ function displayProfile(data) {
 
     const title = document.createElement("p");
     title.id = "title";
-    title.textContent = data.profile.title;
+    title.textContent = data.data.profile.title;
 
     const contactContainer = document.createElement("div");
     contactContainer.classList.add("contact-info");

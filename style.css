@@ -14,7 +14,7 @@ body {
 
 /* Header */
 .header {
-    background-color: #f4f5f7;
+    background-color: #adacac;
     color: rgb(8, 8, 8);
     padding: 15px;
     font-size: 1.5rem;
@@ -43,11 +43,11 @@ body {
 
 h2 {
     margin: 10px 0;
-    color: #333;
+    color: #0a0a0a;
 }
 
 p {
-    color: #666;
+    color: #0f0f0f;
 }
 
 /* Contact Info */
@@ -84,7 +84,7 @@ p {
 }
 
 .social-icons a:hover {
-    background: #363636;
+    background: #0c0c0c;
 }
 
 /* Responsif */

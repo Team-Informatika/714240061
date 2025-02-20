@@ -6,7 +6,7 @@ onHashChange(ada);
 function ada() {
     console.log(getHash());
     const hashpath = getHash();
-    if (hashpath === "data") {
+    if (hashpath === "profile") {
         console.log("ini gan, sudah muncul datanya😊");
         renderHTML("container", "profile.html", renderDataDariJson);
     }

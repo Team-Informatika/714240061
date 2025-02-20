@@ -1,102 +1,79 @@
-/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: #070707;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Header */
-.header {
-    background-color: #adacac;
-    color: rgb(8, 8, 8);
-    padding: 15px;
-    font-size: 1.5rem;
-    border-radius: 10px;
-}
-
-/* Container */
-.container {
-    max-width: 500px;
-    margin: 20px auto;
-    background: rgb(15, 15, 15);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Profil */
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 10px 0;
-    border: 4px solid #121213;
-}
-
-h2 {
-    margin: 10px 0;
-    color: #0a0a0a;
-}
-
-p {
-    color: #0f0f0f;
-}
-
-/* Contact Info */
-.contact-info, .social-links {
-    margin-top: 20px;
-}
-
-.contact-info a {
-    text-decoration: none;
-    color: #0c0c0c;
-    font-weight: bold;
-}
-
-/* Social Media */
-.social-icons {
+    font-family: Arial, sans-serif;
+    background-color: #3e3ea0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(218, 255, 6, 0.836);
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 0 rgba(255, 18, 235, 0.836);
+    transform: translateY(-5px);
+}
+
+.card img#avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.card h3#konten {
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.card p#rate {
+    font-size: 18px;
+    color: #57bffc;
     margin-top: 10px;
 }
 
-.social-icons a {
-    font-size: 24px;
-    color: rgb(26, 25, 25);
-    background: #0a0a0a;
-    padding: 10px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+/* sosial icon */
+.social-icons {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    text-decoration: none;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
 }
 
-.social-icons a:hover {
-    background: #0c0c0c;
+.social-icons i {
+    font-size: 50px;
+    color: #5555;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
-/* Responsif */
-@media (max-width: 480px) {
-    .container {
-        width: 90%;
-        padding: 15px;
-    }
-    
-    .social-icons a {
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-    }
+.social-icons #instagram:hover {
+    color: #e4405f; /* Warna merah muda untuk Instagram */
+}
+
+.social-icons #github:hover {
+    color: #333; /* Warna hitam untuk GitHub */
+}
+
+.social-icons #wa:hover {
+    color: #25d366; /* Warna hijau untuk WhatsApp */
 }
